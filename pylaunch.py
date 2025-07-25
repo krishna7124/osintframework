@@ -51,14 +51,14 @@ if current_time >= launch_date:
     """, unsafe_allow_html=True)
 else:
     # Load and render the HTML file
-    html_file_path = os.path.join(os.path.dirname(__file__), "index.html")
+    html_file_path = os.path.join(os.path.dirname(__file__), "index1.html")
     if os.path.exists(html_file_path):
         with open(html_file_path, "r", encoding="utf-8") as file:
             html_content = file.read()
     else:
         html_content = """
         <h1>Error</h1>
-        <p>Index.html not found. Please ensure the file is in the same directory as this script.</p>
+        <p>Index1.html not found. Please ensure the file is in the same directory as this script.</p>
         """
 
     components.html(
