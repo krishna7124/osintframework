@@ -1,6 +1,7 @@
 import streamlit as st
 import streamlit.components.v1 as components
 import os
+from datetime import datetime
 
 # Set page config to minimize Streamlit interference
 st.set_page_config(
@@ -39,19 +40,29 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# Load and render the HTML file
-html_file_path = os.path.join(os.path.dirname(__file__), "index.html")
-if os.path.exists(html_file_path):
-    with open(html_file_path, "r", encoding="utf-8") as file:
-        html_content = file.read()
-else:
-    html_content = """
-    <h1>Error</h1>
-    <p>Index.html not found. Please ensure the file is in the same directory as this script.</p>
-    """
+# Define launch date
+launch_date = datetime(2025, 7, 26, 10, 0, 0, tzinfo=None)  # 10:00 AM IST, July 26, 2025
+current_time = datetime.now()
 
-components.html(
-    html_content,
-    height=800,  # Matches the content height from your design
-    scrolling=False,
-)
+# Redirect to GitHub page if launch date has passed
+if current_time >= launch_date:
+    st.markdown(f"""
+        <meta http-equiv="refresh" content="0; url=https://krishna7124.github.io/osintframework/">
+    """, unsafe_allow_html=True)
+else:
+    # Load and render the HTML file
+    html_file_path = os.path.join(os.path.dirname(__file__), "index.html")
+    if os.path.exists(html_file_path):
+        with open(html_file_path, "r", encoding="utf-8") as file:
+            html_content = file.read()
+    else:
+        html_content = """
+        <h1>Error</h1>
+        <p>Index.html not found. Please ensure the file is in the same directory as this script.</p>
+        """
+
+    components.html(
+        html_content,
+        height=800,  # Matches the content height from your design
+        scrolling=False,
+    )
