@@ -47,7 +47,7 @@ if os.path.exists(html_file_path):
 else:
     html_content = """
     <h1>Error</h1>
-    <p>test.html not found. Please ensure the file is in the same directory as this script.</p>
+    <p>Index.html not found. Please ensure the file is in the same directory as this script.</p>
     """
 
 components.html(

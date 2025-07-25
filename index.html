@@ -71,14 +71,9 @@
                 <p class="text-lg md:text-xl text-gray-300 mb-6">
                     Get ready to explore a powerful suite of open-source intelligence tools designed for cybersecurity professionals, researchers, and enthusiasts.
                 </p>
-                <div class="bg-gray-800 border border-cyan-400 rounded-lg p-6 mb-8 mx-auto max-w-md">
-                    <h3 class="text-xl font-semibold mb-4">Join the Waitlist</h3>
-                    <p class="text-gray-400 mb-4">Be the first to know when OSINT Toolkit launches!</p>
-                    <div class="flex flex-col sm:flex-row gap-2">
-                        <input type="email" id="email" placeholder="Enter your email" class="flex-grow p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-100 focus:outline-none focus:border-cyan-400">
-                        <button onclick="subscribe()" class="bg-cyan-400 text-gray-900 font-semibold py-2 px-4 rounded-lg hover:bg-cyan-300 transition-colors">Subscribe</button>
-                    </div>
-                    <p id="subscribe-message" class="text-sm text-gray-400 mt-2 hidden">Thank you for subscribing!</p>
+                <div class="mb-8">
+                    <p class="text-sm text-cyan-400"><a href="https://osintframework.streamlit.app/" target="_blank">Click here to visit the OSINT Framework Web now</a></p>
+                    <p class="text-sm text-cyan-400">https://osintframework.streamlit.app/</p>
                 </div>
                 <div class="flex justify-center gap-4">
                     <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://your-domain.com" target="_blank" class="social-btn">LinkedIn</a>
@@ -102,13 +97,18 @@
     </div>
 
     <script>
-        // Countdown Timer
+        // Countdown Timer with Manual Action
         const launchDate = new Date('2025-07-26T10:00:00+05:30').getTime();
+        const redirectUrl = 'https://krishna7124.github.io/osintframework/';
+
         function updateCountdown() {
             const now = new Date().getTime();
             const timeLeft = launchDate - now;
             if (timeLeft <= 0) {
-                document.getElementById('countdown').innerHTML = '<p class="text-2xl text-cyan-400">We have launched! Visit the OSINT Toolkit now!</p>';
+                document.getElementById('countdown').innerHTML = `
+                    <p class="text-2xl text-cyan-400">Launch Complete!</p>
+                    <p class="mt-4"><a href="${redirectUrl}" target="_blank" class="text-cyan-400 hover:text-cyan-300 underline">Click here to visit the OSINT Framework Web now (${redirectUrl})</a></p>
+                `;
                 return;
             }
             const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
@@ -122,20 +122,6 @@
         }
         setInterval(updateCountdown, 1000);
         updateCountdown();
-
-        // Subscription Form (Placeholder)
-        function subscribe() {
-            const email = document.getElementById('email').value;
-            if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                document.getElementById('subscribe-message').classList.remove('hidden');
-                document.getElementById('email').value = '';
-                setTimeout(() => {
-                    document.getElementById('subscribe-message').classList.add('hidden');
-                }, 3000);
-            } else {
-                alert('Please enter a valid email address.');
-            }
-        }
     </script>
 </body>
 </html>
