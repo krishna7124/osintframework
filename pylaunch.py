@@ -40,7 +40,7 @@ st.markdown(
 )
 
 # Load and render the HTML file
-html_file_path = os.path.join(os.path.dirname(__file__), "test.html")
+html_file_path = os.path.join(os.path.dirname(__file__), "index.html")
 if os.path.exists(html_file_path):
     with open(html_file_path, "r", encoding="utf-8") as file:
         html_content = file.read()
