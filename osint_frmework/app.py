@@ -417,13 +417,13 @@ st.markdown(
     """
     <div class="footer">
         <div>
-            <a href="https://github.com/your-username/osint-toolkit/issues" target="_blank">Feedback</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxOg_jjHYLHJca4QUfOnVzEDuO8SH5J6207dDSZDew02Chkg/viewform?usp=header" target="_blank">Feedback</a>
              • 
             <a href="https://github.com/krishna7124" target="_blank">GitHub</a>
              • 
-            <a href="mailto:krishnabhatt268@gmail.com">Contact</a>
+            <a href="https://www.linkedin.com/in/bhatt-krishna-b077691b9/">Linkedin</a>
         </div>
-        <small>OSINT Toolkit • Updated: July 20, 2025, 01:02 PM IST</small>
+        <small>OSINT Toolkit • Updated: July, 2025</small>
     </div>
     """,
     unsafe_allow_html=True,
